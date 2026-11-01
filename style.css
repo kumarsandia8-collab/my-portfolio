@@ -205,7 +205,6 @@ footer {
 #contactForm textarea {
     min-height: 120px;
 }
-
 #contactForm button,
 #welcomeBtn {
     background-color: #4b2e83;
@@ -216,7 +215,41 @@ footer {
     cursor: pointer;
 }
 
+#contactForm button:hover,
+#welcomeBtn:hover {
+    background-color: #7652a8;
+}
+
 #formMessage {
-    color: #4b2e83;
+    color: #8c7db8;
     font-weight: bold;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.skill {
+    background-color: #8c7db8;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.skill p {
+    color: white;
+    margin: 0;
+    font-weight: bold;
+}
+
+.skill:hover {
+    background-color: #8c7db8;
+    transform: translateY(-3px);
 }
