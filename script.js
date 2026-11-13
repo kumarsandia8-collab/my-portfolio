@@ -1,38 +1,38 @@
 
-// 1. Welcome Button Functionality
+// Welcome Button
+const welcomeBtn = document.getElementById("welcomeBtn");
 
-let welcomeBtn = document.getElementById("welcomeBtn");
-
-welcomeBtn.addEventListener("click", function() {
-    alert("Welcome to My Portfolio Website!");
+welcomeBtn.addEventListener("click", function () {
+    alert("Welcome to Sandiaa's Portfolio! 💜");
 });
 
+// Dark Mode / Light Mode
+const themeToggle = document.getElementById("themeToggle");
 
-// 2. Contact Form Functionality
+themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
 
-let contactForm = document.getElementById("contactForm");
+    const isDarkMode = document.body.classList.contains("dark-mode");
 
-contactForm.addEventListener("submit", function(event) {
+    if (isDarkMode) {
+        themeToggle.textContent = "☀️ Light Mode";
+        themeToggle.setAttribute("aria-label", "Switch to light mode");
+        themeToggle.setAttribute("aria-pressed", "true");
+    } else {
+        themeToggle.textContent = "🌙 Dark Mode";
+        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+        themeToggle.setAttribute("aria-pressed", "false");
+    }
+});
 
+// Contact Form
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    formMessage.textContent = "Thank you! Your message has been received. 💜";
 
-    let formMessage = document.getElementById("formMessage");
-
-    if (name === "" || email === "" || message === "") {
-
-        formMessage.textContent = "Please fill all fields!";
-
-    } else {
-
-        formMessage.textContent =
-        "Thank you, " + name + "! Your message is ready.";
-
-        contactForm.reset();
-
-    }
-
+    contactForm.reset();
 });
