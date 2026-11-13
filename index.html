@@ -5,9 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Sandiaa | Personal Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,14 +24,16 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <button id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                🌙 Dark Mode
+            </button>
         </nav>
     </header>
 
     <!-- Home Section -->
     <section id="home">
-
         <h1>Hello, I'm Sandiaa</h1>
-
         <h3>BS Computer Science Student</h3>
 
         <p>
@@ -43,14 +43,14 @@
             developing my skills, and exploring new ideas.
         </p>
 
-        <a href="#about">Learn More</a>
-        <button id="welcomeBtn">Click Me</button>
-
+        <div class="home-buttons">
+            <a href="#about" class="action-btn">Learn More</a>
+            <button id="welcomeBtn" class="action-btn" type="button">Click Me</button>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-
         <h2>About Me</h2>
 
         <p>
@@ -69,101 +69,57 @@
             practical experience to grow in the field of
             Computer Science.
         </p>
-
     </section>
 
     <!-- Education Section -->
     <section id="education">
-
         <h2>My Education</h2>
-
         <h3>BS Computer Science</h3>
-
-        <p>
-            Mehran University of Engineering and Technology (MUET)
-        </p>
-
+        <p>Mehran University of Engineering and Technology (MUET)</p>
         <p>Currently Studying 5th Semester</p>
-
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-
         <h2>My Skills</h2>
 
         <div class="skills-container">
-
-            <div class="skill">
-                <p>MS Office</p>
-            </div>
-
-            <div class="skill">
-                <p>Canva</p>
-            </div>
-
-            <div class="skill">
-                <p>HTML</p>
-            </div>
-
-            <div class="skill">
-                <p>CSS</p>
-            </div>
-
-            <div class="skill">
-                <p>Java</p>
-            </div>
-
-            <div class="skill">
-                <p>Content Creation</p>
-            </div>
-
+            <div class="skill"><p>MS Office</p></div>
+            <div class="skill"><p>Canva</p></div>
+            <div class="skill"><p>HTML</p></div>
+            <div class="skill"><p>CSS</p></div>
+            <div class="skill"><p>Java</p></div>
+            <div class="skill"><p>Content Creation</p></div>
         </div>
-
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-
         <h2>My Projects</h2>
 
         <div class="project-card">
-
             <h3>Employee Payroll System</h3>
-
             <p>
                 A university project developed to manage
                 employee salary information and payroll details.
             </p>
-
         </div>
-
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-
         <h2>Contact Me</h2>
 
         <p>Email: yourname@example.com</p>
 
         <form id="contactForm">
-
-            <input type="text" id="name"
-                   placeholder="Enter your Name">
-
-            <input type="email" id="email"
-                   placeholder="Enter your Email">
-
-            <textarea id="message"
-                      placeholder="Write your Message"></textarea>
-
+            <input type="text" id="name" placeholder="Enter your Name" required>
+            <input type="email" id="email" placeholder="Enter your Email" required>
+            <textarea id="message" placeholder="Write your Message" required></textarea>
             <button type="submit">Send Message</button>
-
         </form>
 
         <p id="formMessage"></p>
-
     </section>
 
     <!-- Footer -->
