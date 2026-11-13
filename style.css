@@ -12,6 +12,7 @@ body {
     background-color: #f5f3ff;
     color: #333;
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Navigation Bar */
@@ -25,6 +26,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav h2 {
@@ -45,6 +47,22 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ffd6f5;
+}
+
+/* Dark Mode Toggle */
+#themeToggle {
+    background-color: white;
+    color: #4b2e83;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#themeToggle:hover {
+    background-color: #ffd6f5;
 }
 
 /* Home Section */
@@ -70,17 +88,37 @@ nav ul li a:hover {
     margin: 0 auto 25px;
 }
 
-#home a {
-    display: inline-block;
-    background-color: #4b2e83;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 25px;
+/* Equal Size Home Buttons */
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-#home a:hover {
+.action-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 46px;
+    padding: 10px 15px;
+    background-color: #4b2e83;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-btn:hover {
     background-color: #7652a8;
+    transform: translateY(-2px);
 }
 
 /* Common Section Styling */
@@ -119,113 +157,6 @@ section h2 {
     background-color: white;
 }
 
-#skills ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-#skills li {
-    background-color: #e9ddff;
-    color: #4b2e83;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-weight: bold;
-}
-
-/* Projects Section */
-#projects {
-    background-color: #f0eaff;
-}
-
-#projects div {
-    background-color: white;
-    padding: 25px;
-    max-width: 500px;
-    margin: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Section */
-#contact {
-    background-color: white;
-}
-
-/* Footer */
-footer {
-    background-color: #4b2e83;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    #home h1 {
-        font-size: 30px;
-    }
-
-    section {
-        padding: 45px 5%;
-    }
-}
-/* Contact Form Styling */
-
-#contactForm {
-    max-width: 500px;
-    margin: 25px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#contactForm input,
-#contactForm textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-#contactForm textarea {
-    min-height: 120px;
-}
-#contactForm button,
-#welcomeBtn {
-    background-color: #4b2e83;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-#contactForm button:hover,
-#welcomeBtn:hover {
-    background-color: #7652a8;
-}
-
-#formMessage {
-    color: #8c7db8;
-    font-weight: bold;
-}
-
-/* Skills Section */
 .skills-container {
     display: flex;
     justify-content: center;
@@ -250,6 +181,159 @@ footer {
 }
 
 .skill:hover {
-    background-color: #8c7db8;
+    background-color: #4b2e83;
     transform: translateY(-3px);
+}
+
+/* Projects Section */
+#projects {
+    background-color: #f0eaff;
+}
+
+.project-card {
+    background-color: white;
+    padding: 25px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #4b2e83;
+}
+
+/* Contact Section */
+#contact {
+    background-color: white;
+}
+
+#contactForm {
+    max-width: 500px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+#contactForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#contactForm button {
+    background-color: #4b2e83;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#contactForm button:hover {
+    background-color: #7652a8;
+}
+
+#formMessage {
+    color: #4b2e83;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #4b2e83;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background-color: #171421;
+    color: #eeeeee;
+}
+
+body.dark-mode #home {
+    background-color: #282139;
+}
+
+body.dark-mode #home h1,
+body.dark-mode #home h3 {
+    color: #d4baff;
+}
+
+body.dark-mode #about,
+body.dark-mode #skills,
+body.dark-mode #contact {
+    background-color: #211d2d;
+}
+
+body.dark-mode #education,
+body.dark-mode #projects {
+    background-color: #302941;
+}
+
+body.dark-mode section h2,
+body.dark-mode .project-card h3 {
+    color: #d4baff;
+}
+
+body.dark-mode .project-card {
+    background-color: #211d2d;
+    color: #eeeeee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #contactForm input,
+body.dark-mode #contactForm textarea {
+    background-color: #302941;
+    color: white;
+    border: 1px solid #65577e;
+}
+
+body.dark-mode #contactForm input::placeholder,
+body.dark-mode #contactForm textarea::placeholder {
+    color: #c5bdd3;
+}
+
+body.dark-mode #formMessage {
+    color: #d4baff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    #home h1 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+    .home-buttons {
+        gap: 10px;
+    }
 }
